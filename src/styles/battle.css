@@ -1,0 +1,99 @@
+*,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.BattleBackground {
+  height: 150vh;
+  width: 100 vw;
+  background-image: url("../backgrounds/25.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.BattleMainContainer {
+  width: 100vw;
+  height: 120vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.BattleMainHeading {
+  font-size: 6rem;
+  text-transform: uppercase;
+  font-weight: 800;
+  text-align: center;
+  /*creates image consisting of pregressive transitiopn between 2 or more colors*/
+  background: linear-gradient(90deg, red, yellow);
+  /* The background-clip CSS property sets whether an element's background
+  extends underneath its border box, padding box, or content box. */
+  background-clip: text;
+  color: transparent;
+  /* The drop-shadow() CSS function applies a drop shadow effect to the input image.  */
+  filter: drop-shadow(20px 15px 25px rgba(0, 0, 0, 0.5));
+}
+
+.UserMainContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  width: 50%;
+}
+
+.healthBarUserContainer {
+  width: 80%;
+  align-self: center;
+}
+
+.outsideBar {
+  width: 40vw;
+  height: 50px;
+  border-radius: 25px;
+  border: 2px solid grey;
+  margin: 0 0 3% 0;
+}
+
+.innerFill {
+  width: 60%;
+  height: 100%;
+  border-radius: 25px;
+  border: 2px solid grey;
+  margin: 0 0 3% 0;
+}
+
+.UserMainContainer img {
+  align-self: center;
+  filter: drop-shadow(20px 15px 25px rgba(0, 0, 0, 0.5));
+}
+
+.ComputerMainContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  width: 50%;
+}
+
+.ComputerMainContainer img {
+  align-self: center;
+  filter: drop-shadow(20px 15px 25px rgba(0, 0, 0, 0.5));
+}
+
+.DivActionButtons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.ButtonAction {
+  margin-top: 40px !important;
+  width: 250px !important;
+  height: 70px !important;
+  font-size: 1.5em !important;
+  background-color: blueviolet !important;
+}

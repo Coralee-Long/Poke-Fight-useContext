@@ -1,0 +1,23 @@
+.css-1jz7hv7-MuiImageList-root {
+  width: 100vw !important;
+  height: 100vh !important;
+  /* overflow-y: scroll; */
+}
+
+.css-sghohy-MuiButtonBase-root-MuiButton-root {
+  margin: 8px !important;
+  background-color: rgb(20, 129, 165) !important;
+  width: 90px;
+}
+
+
+.css-fj2wnt-MuiLinearProgress-root .MuiLinearProgress-bar {
+  border-radius: 1px !important;
+  /* background-color: orange !important; */
+  background: linear-gradient(270deg, red, yellow) !important;
+}
+
+/* #imgList {
+  grid-template-columns: auto minmax(1fr, 1fr, 1fr, 1fr) !important;
+  border: 1px soil red;
+} */
