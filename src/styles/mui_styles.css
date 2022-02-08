@@ -6,10 +6,9 @@
 
 .css-sghohy-MuiButtonBase-root-MuiButton-root {
   margin: 8px !important;
-  background-color: rgb(20, 129, 165) !important;
+  background-color: red !important;
   width: 90px;
 }
-
 
 .css-fj2wnt-MuiLinearProgress-root .MuiLinearProgress-bar {
   border-radius: 1px !important;

@@ -1,7 +1,6 @@
-import { useEffect, useState, useContext } from "react";
+import { useContext } from "react";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
-import Typography from "@mui/material/Typography";
 import Modal from "@mui/material/Modal";
 import { useNavigate } from "react-router-dom";
 import { PokeContext } from "../context/pokeContext";
@@ -19,37 +18,11 @@ const confirmModelStyle = {
 };
 
 export default function ConfirmModel() {
-  // {
-  // setConfirmModelState,
-  // confirmModelState,
-  // handleOpenConfirm,
-  // handleCloseConfirm,
-  // singlePoke,
-  // setSinglePoke,
-  // handleClose,
-  // showConfirmModel,
-  // setShowConfirmModel,
-  // setBasicModelState,
-  // basicModelState,
-  // type,
-  // setType,
-  // pokemon,
-  // setPokemon,
-  // singlePokeId,
-  // setSinglePokeId,
-  // error,
-  // setError,
-  // loading,
-  // setLoading,
-  // loadingSingle,
-  // setLoadingSingle,
-  // }
   const { singlePoke, singlePokeId, confirmModelState } =
     useContext(PokeContext);
 
   const [singlePokeValue, setSinglePokeValue] = singlePoke;
   const [singlePokeIdValue, setSinglePokeIdValue] = singlePokeId;
-  //const [basicModelStateValue, setBasicModelStateValue] = basicModelState;
   const [confirmModelStateValue, setConfirmModelStateValue] = confirmModelState;
 
   const handleCloseConfirm = (e) => {

@@ -1,11 +1,9 @@
 import * as React from "react";
-import { useEffect, useState, useContext } from "react";
-import axios from "axios";
+import { useContext } from "react";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import Modal from "@mui/material/Modal";
-import PokeGallery from "./PokeGallery";
 import { PokeContext } from "../context/pokeContext";
 
 const style = {
@@ -21,28 +19,6 @@ const style = {
 };
 
 export default function BasicModel() {
-  // {
-  // handleClose,
-  // singlePoke,
-  // setSinglePoke,
-  // showConfirmModel,
-  // setShowConfirmModel,
-  // handleOpenConfirm,
-  // setBasicModelState,
-  // basicModelState,
-  // type,
-  // setType,
-  // pokemon,
-  // setPokemon,
-  // singlePokeId,
-  // setSinglePokeId,
-  // error,
-  // setError,
-  // loading,
-  // setLoading,
-  // loadingSingle,
-  // setLoadingSingle,
-  // }
   const { singlePoke, singlePokeId, basicModelState, confirmModelState } =
     useContext(PokeContext);
 
@@ -51,29 +27,18 @@ export default function BasicModel() {
   // const handleClose = useContext(PokeContext);
   const [singlePokeValue, setSinglePokeValue] = singlePoke;
   const [singlePokeIdValue, setSinglePokeIdValue] = singlePokeId;
-  //const handleOpenConfirm = useContext(PokeContext);
-  // const [poke, setPoke] = useState([]);
-  // const [error, setError] = useState(false);
-  // const [loading, setLoading] = useState(true);
-
-  //console.log(singlePoke);
 
   // if (loading) return <h1>Loading......</h1>;
   // if (error) return <h1>Something is wrong....</h1>;
 
   const handleClose = (e) => {
-    //console.log("Inside handle close of basic model");
     setBasicModelStateValue(false);
-    //console.log(basicModelState);
     setSinglePokeIdValue(0);
   };
 
   const handleOpenConfirm = (e) => {
-    //console.log("Inside handle open confirm ");
     setBasicModelStateValue(false);
     setConfirmModelStateValue(true);
-    // console.log(basicModelState);
-    // console.log(confirmModelState);
   };
 
   return (
@@ -121,7 +86,6 @@ export default function BasicModel() {
           <Typography id="modal-modal-description" sx={{ mt: 2 }}></Typography>
         </Box>
       </Modal>
-      {/* <Button onClick={handleOpen}>Poke Info</Button> */}
     </div>
   );
 }

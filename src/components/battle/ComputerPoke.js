@@ -2,62 +2,52 @@ import { useState, useEffect, useContext } from "react";
 import UserHealthBar from "./UserHealthBar";
 import { PokeContext } from "../../context/pokeContext";
 
-const ComputerPoke = () =>
-  //   {
-  //   type,
-  //   setType,
-  //   pokemon,
-  //   setPokemon,
-  //   singlePoke,
-  //   setSinglePoke,
-  //   singlePokeId,
-  //   setSinglePokeId,
-  //   error,
-  //   setError,
-  //   loading,
-  //   setLoading,
-  //   loadingSingle,
-  //   setLoadingSingle,
-  // }
-  {
-    const { pokemon, randomPoke } = useContext(PokeContext);
+const ComputerPoke = () => {
+  const { pokemon, randomPoke } = useContext(PokeContext);
+  // const [compPoke, setCompPoke] = useState({});
 
-    const [pokemonValue, setPokemonValue] = pokemon;
-    const [randomPokeValue, setRandomPokeValue] = randomPoke;
+  const [pokemonValue, setPokemonValue] = pokemon;
+  const [randomPokeValue, setRandomPokeValue] = randomPoke;
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(false);
 
-    // let compPoke = 1;
-    // const getRandomPoke = () => {
-    // get the random id
-    const randomId = Math.floor(Math.random() * 809) + 1;
-    console.log("Randomid:" + randomId);
-    let compPoke = pokemonValue.find((poke) => poke.id === randomId);
-    //   setRandomPokeValue(compPoke);
-    console.log(pokemonValue);
-    console.log(randomPokeValue);
-    console.log(compPoke);
-    //return randomPoke;
-    // };
+  const computerPokemon = async () => {
+    const randomId = (await Math.floor(Math.random() * 809)) + 1;
+    await setRandomPokeValue(pokemonValue.find((poke) => poke.id === randomId));
+    setLoading(true);
+  };
 
-    // useEffect(() => {
-    //   getRandomPoke();
-    // }, [randomPokeValue]);
+  useEffect(() => {
+    computerPokemon();
+  }, []);
 
+  console.log(randomPokeValue);
+  if (!randomPokeValue) {
+    setError(true);
+  }
+  if (!error)
     return (
       <div className="ComputerMainContainer">
-        <div className="healthBarUserContainer">
-          <UserHealthBar Poke={compPoke} />
-        </div>
-        <h1 className="BattleMainHeading">{compPoke.name.english}</h1>
-        <img
-          src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/${compPoke.id}.png`}
-          alt={compPoke.name.english}
-          width="600px"
-          height="auto"
-          value={compPoke.id}
-          name={compPoke.name.english}
-        />
+        {loading && randomPokeValue && (
+          <>
+            <div className="healthBarUserContainer">
+              <UserHealthBar Poke={randomPokeValue} />
+            </div>
+            <h1 className="BattleMainHeading">
+              {randomPokeValue.name.english}
+            </h1>
+            <img
+              src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/${randomPokeValue.id}.png`}
+              alt={randomPokeValue.name.english}
+              width="600px"
+              height="auto"
+              value={randomPokeValue.id}
+              name={randomPokeValue.name.english}
+            />
+          </>
+        )}
       </div>
     );
-  };
+};
 
 export default ComputerPoke;
