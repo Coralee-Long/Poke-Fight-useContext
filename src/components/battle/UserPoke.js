@@ -4,11 +4,13 @@ import { useContext, useState } from "react";
 import { PokeContext } from "../../context/pokeContext";
 
 const UserPoke = () => {
-  const { singlePoke } = useContext(PokeContext);
+  const { singlePoke, userHealth } = useContext(PokeContext);
   const [singlePokeValue, setSinglePokeValue] = singlePoke;
+  const [userHealthValue, setUserHealthValue] = userHealth;
+
   const [error, setError] = useState(false);
-  console.log("user poke:");
-  console.log(singlePokeValue);
+  // console.log("user poke:");
+  // console.log(singlePokeValue);
   if (!singlePokeValue) {
     setError(true);
   }
@@ -16,7 +18,7 @@ const UserPoke = () => {
     return (
       <div className="UserMainContainer">
         <div className="healthBarUserContainer">
-          <UserHealthBar Poke={singlePokeValue} />
+          <UserHealthBar healthbar={userHealthValue} />
         </div>
         <h1 className="BattleMainHeading">{singlePokeValue.name.english}</h1>
 

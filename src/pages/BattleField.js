@@ -7,11 +7,13 @@ import LogicMethods from "../components/logic/LogicMethods";
 import { PokeContext } from "../context/pokeContext";
 
 const BattleField = () => {
-  const { error, loading, singlePoke, pokemon } = useContext(PokeContext);
+  const { error, loading, singlePoke, pokemon, randomPoke } =
+    useContext(PokeContext);
   const [errorValue, setErrorValue] = error;
   const [loadingValue, setLoadingValue] = loading;
   const [singlePokeValue, setSinglePokeValue] = singlePoke;
   const [pokemonValue, setPokemonValue] = pokemon;
+  const [randomPokeValue, setRandomPokeValue] = randomPoke;
 
   if (loadingValue) return <h1>Loading......</h1>;
   if (errorValue) return <h1>Something is wrong....</h1>;
@@ -26,7 +28,7 @@ const BattleField = () => {
           variant="contained"
           value="attack"
           onClick={() =>
-            LogicMethods.getResult(singlePokeValue, pokemonValue[0], "attack")
+            LogicMethods.getResult(singlePokeValue, randomPokeValue, "attack")
           }
         >
           ATTACK

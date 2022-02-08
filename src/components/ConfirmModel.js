@@ -31,7 +31,7 @@ export default function ConfirmModel() {
   };
 
   let navigate = useNavigate();
-  console.log(singlePokeValue);
+  //console.log(singlePokeValue);
   return (
     <>
       <Modal

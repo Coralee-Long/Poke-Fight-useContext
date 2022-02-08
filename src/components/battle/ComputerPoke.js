@@ -3,13 +3,12 @@ import UserHealthBar from "./UserHealthBar";
 import { PokeContext } from "../../context/pokeContext";
 
 const ComputerPoke = () => {
-  const { pokemon, randomPoke } = useContext(PokeContext);
-  // const [compPoke, setCompPoke] = useState({});
-
+  const { pokemon, randomPoke, computerHealth } = useContext(PokeContext);
   const [pokemonValue, setPokemonValue] = pokemon;
   const [randomPokeValue, setRandomPokeValue] = randomPoke;
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
+  const [computerHealthValue, setComputerHealthValue] = computerHealth;
 
   const computerPokemon = async () => {
     const randomId = (await Math.floor(Math.random() * 809)) + 1;
@@ -21,7 +20,7 @@ const ComputerPoke = () => {
     computerPokemon();
   }, []);
 
-  console.log(randomPokeValue);
+  //console.log(randomPokeValue);
   if (!randomPokeValue) {
     setError(true);
   }
@@ -31,7 +30,7 @@ const ComputerPoke = () => {
         {loading && randomPokeValue && (
           <>
             <div className="healthBarUserContainer">
-              <UserHealthBar Poke={randomPokeValue} />
+              <UserHealthBar userHealth={computerHealthValue} />
             </div>
             <h1 className="BattleMainHeading">
               {randomPokeValue.name.english}
