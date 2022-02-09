@@ -18,7 +18,7 @@ const UserPoke = () => {
     return (
       <div className="UserMainContainer">
         <div className="healthBarUserContainer">
-          <UserHealthBar healthbar={userHealthValue} />
+          <UserHealthBar value={userHealthValue} />
         </div>
         <h1 className="BattleMainHeading">{singlePokeValue.name.english}</h1>
 

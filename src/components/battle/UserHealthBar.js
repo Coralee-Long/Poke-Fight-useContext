@@ -8,7 +8,7 @@ import LinearProgress, {
 import { useState, useContext } from "react";
 import { PokeContext } from "../../context/pokeContext";
 
-const UserHealthBar = ({ healthbar }) => {
+const UserHealthBar = ({ value }) => {
   //const [singlePoke, setSinglePoke] = useContext(PokeContext.singlePoke);
 
   const BorderLinearProgress = styled(LinearProgress)(({ theme }) => ({
@@ -27,10 +27,11 @@ const UserHealthBar = ({ healthbar }) => {
   return (
     <>
       <div>
+        <p>{value}</p>
         <Box sx={{ flexGrow: 1 }}>
           <BorderLinearProgress
             variant="determinate"
-            value={healthbar}
+            value={value}
             sx={{
               height: "17px",
               marginTop: "50px",

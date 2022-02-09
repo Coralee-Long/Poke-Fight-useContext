@@ -30,7 +30,7 @@ const ComputerPoke = () => {
         {loading && randomPokeValue && (
           <>
             <div className="healthBarUserContainer">
-              <UserHealthBar userHealth={computerHealthValue} />
+              <UserHealthBar value={computerHealthValue} />
             </div>
             <h1 className="BattleMainHeading">
               {randomPokeValue.name.english}
