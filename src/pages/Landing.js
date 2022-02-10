@@ -9,12 +9,12 @@ const Landing = () => {
                 <h1>Welcome to Pokemon fight !!!! </h1>
                 <h3>Please login if you are already user and register if you are new to this site.</h3>
                 <div>
-                    <Link to="/login" >>
+                    <Link to="/login" >
                         <Button variant="contained">LOG IN</Button>
                     </Link>
                     <Link to="/register">
                     <Button variant="contained">REGISTER</Button>
-                    <Link>
+                    </Link>
 
                     </div>
                 </div>
