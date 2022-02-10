@@ -1,8 +1,12 @@
-dimport React, { useState } from 'react'
+import React, { useState } from 'react'
 import { useNavigate } from "react-router-dom";
+import Button from "@mui/material/Button";
+import {login} from "../logic/UserFunctions"
 
 const Login = () => {
 
+    const [firstName, setFirstName] = useState('')
+    const [lastName, setLastName] = useState('')
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
 
@@ -11,27 +15,36 @@ const Login = () => {
     const testLogin = (e) => {
         e.preventDefault()
 
-        const user = {
+        const user = {          
             email: email,
             password: password
         }
 
         login(user).then(res => {
             if (res) {
-                navigate('/profile')
+              
+                navigate('/welcome')
             }
         })
     }
 
     return (
-        <div className="container">
-            <div className="row">
-                <div className="col-md-6 mt-5 mx-auto">
+                <div >
+                   <h1 className="">Please sign in</h1>
 
-                    <h1>LOG IN PAGE</h1></div>)
-            </div>
-        </div>
-        </div >
-}
-
+                    <form noValidate onSubmit={testLogin}>
+                                                <h1>LOG IN PAGE</h1>
+                        <div> <label htmlFor="email">Email</label>
+                <input type="email" name="email" placeholder="Enter your email" value={email} onChange={(e)=>setEmail(e.target.value)}></input>
+                </div>
+                        
+                        <div> <label htmlFor="password">Password</label>
+            <input name="password" type="password" placeholder="Enter your password" value={password} onChange={(e) => setPassword(e.target.value)}></input>
+                        </div>
+                        <Button type="submit" >Login</Button>      
+</form>
+                  </div>
+                    
+                    )
+    }
 export default Login
