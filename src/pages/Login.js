@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+dimport React, { useState } from 'react'
 import { useNavigate } from "react-router-dom";
 
 const Login = () => {
@@ -12,18 +12,26 @@ const Login = () => {
         e.preventDefault()
 
         const user = {
-            email : email,
-            password : password
+            email: email,
+            password: password
         }
 
         login(user).then(res => {
-            if(res) {
+            if (res) {
                 navigate('/profile')
             }
         })
     }
 
-    return (<div><h1>LOG IN PAGE</h1></div>)
+    return (
+        <div className="container">
+            <div className="row">
+                <div className="col-md-6 mt-5 mx-auto">
+
+                    <h1>LOG IN PAGE</h1></div>)
+            </div>
+        </div>
+        </div >
 }
 
 export default Login
