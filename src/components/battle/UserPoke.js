@@ -27,10 +27,9 @@ const UserPoke = () => {
         </div>
 
         <img
+          id="pokeImage"
           src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/${singlePokeValue.id}.png`}
           alt={singlePokeValue.name.english}
-          width="400px"
-          height="auto"
           value={singlePokeValue.id}
           name={singlePokeValue.name.english}
         />

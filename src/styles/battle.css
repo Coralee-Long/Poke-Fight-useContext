@@ -37,43 +37,43 @@ background-position: center; */
 }
 
 .back {
-  height: 5%;
+  max-height: 5%;
+  min-height: 5%;
+  display: flex;
 }
 .topDiv {
-  height: 25%;
+  max-height: 25%;
+  min-height: 25%;
   display: flex;
   align-items: center;
 }
 
-.MuiButton-root.MuiButton-contained.MuiButton-containedPrimary
-  .MuiButton-sizeMedium
-  .MuiButton-containedSizeMedium
-  .MuiButtonBase-root
-  .ButtonAction
-  .css-sghohy-MuiButtonBase-root-MuiButton-root {
-  background-color: red !important;
-}
-
 .middleDiv {
-  height: 50%;
+  max-height: 55%;
+  min-height: 55%;
+  display: flex;
+  align-items: center;
 }
 
 .bottomDiv {
+  max-height: 15%;
+  min-height: 15%;
   display: flex;
   justify-content: center;
-  align-items: flex-start;
-  height: 20%;
+  align-items: center;
   width: 100vw;
+  display: flex;
 }
 
 .BattleMainContainer {
-  max-height: 100vh !important;
+  max-height: 60vh !important;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
 }
 
 .BattleMainHeading {
+  display: flex;
   padding-top: 5%;
   font-family: "Pocket Monk";
   letter-spacing: 3px;
@@ -103,17 +103,29 @@ background-position: center; */
   height: 100%;
 }
 
-.healthBarUserContainer {
-  width: 85%;
+.UserMainContainer img {
+  height: 100%;
+  width: auto;
   align-self: center;
+  filter: drop-shadow(20px 15px 25px rgba(0, 0, 0, 0.5));
 }
 
-.UserMainContainer img {
-  height: 90%;
-  width: 85%;
-  align-self: center;
-  outline: white;
-  filter: drop-shadow(20px 15px 25px rgba(0, 0, 0, 0.5));
+#pokeImage {
+  display: flex;
+  height: 500px;
+  width: auto;
+}
+
+@media screen and (max-width: 1280px) {
+  #pokeImage {
+    height: 300px;
+  }
+}
+
+@media screen and (max-width: 720px) {
+  #pokeImage {
+    height: 200px;
+  }
 }
 
 .ComputerMainContainer {
@@ -126,8 +138,8 @@ background-position: center; */
 }
 
 .ComputerMainContainer img {
-  height: 90%;
-  width: 85%;
+  height: 100%;
+  width: auto;
   align-self: center;
   filter: drop-shadow(20px 15px 25px rgba(0, 0, 0, 0.5));
 }
@@ -140,7 +152,6 @@ background-position: center; */
 }
 
 .ButtonAttack {
-  margin: 40px 90px 0px 80px !important;
   width: 250px !important;
   height: 80px !important;
   font-size: 1.5em !important;
@@ -149,25 +160,45 @@ background-position: center; */
 
 .ButtonBack {
   background-color: red !important;
+  width: 130px !important;
+  height: 50px !important;
   margin: 30px 0 0 30px !important;
 }
 
 .battleComments {
-  background-color: rgba(255, 255, 255, 0.7);
-  filter: drop-shadow(10px 15px 15px rgba(0, 0, 0, 0.5));
-  border-radius: 20px;
+  display: flex;
+  background-color: rgba(255, 255, 255, 0.8);
+  filter: drop-shadow(10px 10px 10px rgba(0, 0, 0, 0.7));
+  border-radius: 12px;
   width: 50%;
-  padding: 40px;
-  font-size: 2rem;
+  height: 100%;
+  padding: 2rem;
+  font-family: "Pocket Monk";
+  line-height: 125%;
+  letter-spacing: 1px;
+  font-size: 2.8rem;
   text-align: center;
+  -webkit-text-stroke: 2px #3667b0;
+  color: #ffcb04;
+
   /* background: linear-gradient(90deg, red, yellow, green) !important; */
+}
+
+.battleComments label {
+  width: 100%;
+}
+
+.healthBarUserContainer {
+  width: 70% !important;
+  height: auto;
+  align-self: center;
 }
 
 .healthBarContainer {
   display: flex;
   align-items: center;
-  width: 100%;
-  height: 100%;
+  /* width: 90% !important;
+  height: 90% !important; */
 }
 
 .healthBarValue {
@@ -180,4 +211,52 @@ background-position: center; */
   -webkit-text-stroke: 3px #3667b0;
   color: #ffcb04;
   filter: drop-shadow(3px 3px 0px rgba(0, 0, 0, 0.9));
+}
+
+/* // Responsive */
+
+@media screen and (max-width: 1280px) {
+  #pokeImage {
+    height: 300px;
+  }
+  .healthBarUserContainer {
+    flex-shrink: 1;
+  }
+
+  .healthBarContainer {
+    flex-shrink: 1;
+  }
+  .BattleMainHeading {
+    letter-spacing: 2px;
+    font-size: 4rem;
+    text-align: center;
+    -webkit-text-stroke: 2px #3667b0;
+    color: #ffcb04;
+    filter: drop-shadow(5px 5px 0px rgba(0, 0, 0, 0.9));
+  }
+  .battleComments {
+    width: 50%;
+    height: 100%;
+    font-size: 2rem;
+    -webkit-text-stroke: 1px #3667b0;
+    color: #ffcb04;
+  }
+}
+
+@media screen and (max-width: 720px) {
+  #pokeImage {
+    height: 200px;
+  }
+  .healthBarUserContainer {
+    width: 100% !important;
+    flex-shrink: 2;
+  }
+  .healthBarContainer {
+    flex-shrink: 2;
+  }
+  .ButtonAttack {
+    width: 10px !important;
+    height: 50px !important;
+    font-size: 1em !important;
+  }
 }

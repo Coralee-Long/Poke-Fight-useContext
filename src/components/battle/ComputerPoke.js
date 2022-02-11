@@ -34,10 +34,9 @@ const ComputerPoke = () => {
             </div>
 
             <img
+              id="pokeImage"
               src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/${randomPokeValue.id}.png`}
               alt={randomPokeValue.name.english}
-              width="400px"
-              height="auto"
               value={randomPokeValue.id}
               name={randomPokeValue.name.english}
             />
