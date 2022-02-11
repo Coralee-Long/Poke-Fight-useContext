@@ -26,16 +26,15 @@ const UserPoke = () => {
           <UserHealthBar value={userHealthValue} />
         </div>
 
-        <h1 className="BattleMainHeading">{singlePokeValue.name.english}</h1>
-
         <img
           src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/${singlePokeValue.id}.png`}
           alt={singlePokeValue.name.english}
-          width="600px"
+          width="400px"
           height="auto"
           value={singlePokeValue.id}
           name={singlePokeValue.name.english}
         />
+        <h1 className="BattleMainHeading">{singlePokeValue.name.english}</h1>
       </div>
     );
 };

@@ -32,17 +32,18 @@ const ComputerPoke = () => {
             <div className="healthBarUserContainer">
               <UserHealthBar value={computerHealthValue} />
             </div>
-            <h1 className="BattleMainHeading">
-              {randomPokeValue.name.english}
-            </h1>
+
             <img
               src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/${randomPokeValue.id}.png`}
               alt={randomPokeValue.name.english}
-              width="600px"
+              width="400px"
               height="auto"
               value={randomPokeValue.id}
               name={randomPokeValue.name.english}
             />
+            <h1 className="BattleMainHeading">
+              {randomPokeValue.name.english}
+            </h1>
           </>
         )}
       </div>

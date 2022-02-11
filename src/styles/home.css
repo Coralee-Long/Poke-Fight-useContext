@@ -5,3 +5,55 @@
   width: 100%;
   align-content: center;
 }
+
+.mainDivLanding {
+  max-height: 100vh;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* justify-content: center; */
+  text-align: center;
+}
+
+.mainDivLandingTitle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3em;
+  /* padding-bottom: 1em;
+  padding-top: 2em; */
+  height: 40%;
+}
+
+.mainDivLandingLinks {
+  display: block;
+  height: 60%;
+}
+
+.mainBackground {
+  height: 100vh !important;
+  width: 100vw;
+  background-image: url("../backgrounds/game_background_1.png");
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.linkLanding {
+  text-decoration: none;
+}
+
+.btnLanding {
+  width: 200px !important;
+  height: 70px !important;
+  font-size: 1.5em !important;
+  margin-right: 40px !important;
+}
+
+.headingWelcome {
+  color: blue;
+}

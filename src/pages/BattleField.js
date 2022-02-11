@@ -98,8 +98,8 @@ const BattleField = () => {
 
   const attack = async (attackValue, defendValue, warriorType) => {
     //clear the attack and defence value from label
-    // lblUserPoints.innerText = "";
-    // lblComputerPoints.innerText = "";
+    lblUserPoints.innerText = "";
+    lblComputerPoints.innerText = "";
 
     if (attackValue > defendValue) {
       let attackDifference = attackValue - defendValue;
@@ -114,8 +114,7 @@ const BattleField = () => {
           //set the attack value
           lblComputerPoints.innerText = `${singlePokeValue.name.english} attacks with: ${attackValue}.
           ${randomPokeValue.name.english} defends with:${defendValue}.
-          ${randomPokeValue.name.english} loses ${attackDifference} health
-          points.`;
+          ${randomPokeValue.name.english} loses ${attackDifference} health points.`;
         } else {
           setComputerHealthValue(0);
         }
@@ -130,8 +129,7 @@ const BattleField = () => {
           //set the attack value
           lblUserPoints.innerText = `${randomPokeValue.name.english} attacks with: ${attackValue}.
           ${singlePokeValue.name.english} defends with:${defendValue}.
-          ${singlePokeValue.name.english} loses ${attackDifference} health
-          points.`;
+          ${singlePokeValue.name.english} loses ${attackDifference} health points.`;
         } else {
           setUserHealthValue(0);
         }
@@ -150,8 +148,7 @@ const BattleField = () => {
           //set the attack value
           lblUserPoints.innerText = `${singlePokeValue.name.english} attacks with: ${attackValue}.
           ${randomPokeValue.name.english} defends with:${defendValue}.
-          ${singlePokeValue.name.english} loses ${defenceDifference} health
-          points`;
+          ${singlePokeValue.name.english} loses ${defenceDifference} health points`;
         } else {
           setUserHealthValue(0);
         }
@@ -166,8 +163,7 @@ const BattleField = () => {
           //set the attack value
           lblComputerPoints.innerText = `${randomPokeValue.name.english} attacks with: ${attackValue}.
           ${singlePokeValue.name.english} defends with:${defendValue}.
-          ${randomPokeValue.name.english} loses ${defenceDifference} health
-          points.`;
+          ${randomPokeValue.name.english} loses ${defenceDifference} healt points.`;
         } else {
           setComputerHealthValue(0);
         }
@@ -197,13 +193,33 @@ const BattleField = () => {
   if (errorValue) return <h1>Something is wrong....</h1>;
   return (
     <div className="BattleBackground">
-      <div className="DivActionButtons">
-        {/* for example passed pokemon[0] as ComputerPoke value
-        Have to shift logic of getting random poke to here and the pass that as computer poke
-        */}
+      <div className="back">
+        <Button
+          className="ButtonBack"
+          variant="contained"
+          onClick={goBackHandler}
+        >
+          BACK
+        </Button>
+      </div>
+      <div className="topDiv">
+        <div className="battleComments">
+          <label name="lblUserPoints" id="lblUserPoints"></label>
+          <label name="lblComputerPoints" id="lblComputerPoints"></label>
+        </div>
+      </div>
+
+      <div className="middleDiv">
+        <div className="BattleMainContainer">
+          {singlePokeValue.length !== 0 ? <UserPoke /> : navigate("/welcome")}
+          <ComputerPoke />
+        </div>
+        <div>{winnerValue !== null ? <EndBattleModel /> : <div></div>}</div>
+      </div>
+      <div className="bottomDiv">
         <Button
           id="btnAttack"
-          className="ButtonAction"
+          className="ButtonAttack"
           variant="contained"
           value="attack"
           onClick={startFightHandler}
@@ -212,23 +228,7 @@ const BattleField = () => {
         >
           Attack
         </Button>
-        <Button
-          className="ButtonAction"
-          variant="contained"
-          onClick={goBackHandler}
-        >
-          BACK
-        </Button>
       </div>
-      <div className="battleComments">
-        <label name="lblUserPoints" id="lblUserPoints"></label>
-        <label name="lblComputerPoints" id="lblComputerPoints"></label>
-      </div>
-      <div className="BattleMainContainer">
-        {singlePokeValue.length !== 0 ? <UserPoke /> : navigate("/welcome")}
-        <ComputerPoke />
-      </div>
-      <div>{winnerValue !== null ? <EndBattleModel /> : <div></div>}</div>
     </div>
   );
 };

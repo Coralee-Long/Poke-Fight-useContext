@@ -1,24 +1,28 @@
-import React from 'react'
+import React from "react";
 import Button from "@mui/material/Button";
-import { Link } from "react-router-dom"
+import { Link } from "react-router-dom";
 
 const Landing = () => {
-    return (
-        <>
-            <div>
-                <h1>Welcome to Pokemon fight !!!! </h1>
-                <h3>Please login if you are already user and register if you are new to this site.</h3>
-                <div>
-                    <Link to="/login" >
-                        <Button variant="contained">LOG IN</Button>
-                    </Link>
-                    <Link to="/register">
-                    <Button variant="contained">REGISTER</Button>
-                    </Link>
-
-                    </div>
-                </div>
-            </>
-            )
-}
-            export default Landing
+  return (
+    <>
+      <div className="mainDivLanding mainBackground">
+        <div className="mainDivLandingTitle">
+          <h1 className="headingWelcome">WELCOME TO POKEMON FIGHT </h1>
+        </div>
+        <div className="mainDivLandingLinks">
+          <Link to="/login" className="linkLanding">
+            <Button variant="contained" className="btnLanding">
+              LOG IN
+            </Button>
+          </Link>
+          <Link to="/register" className="linkLanding">
+            <Button variant="contained" className="btnLanding">
+              REGISTER
+            </Button>
+          </Link>
+        </div>
+      </div>
+    </>
+  );
+};
+export default Landing;

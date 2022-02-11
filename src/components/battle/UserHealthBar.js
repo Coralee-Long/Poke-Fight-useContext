@@ -27,17 +27,16 @@ const UserHealthBar = ({ value }) => {
   return (
     <>
       <div>
-        <p className="healthBarValue">{value}</p>
-        <Box sx={{ flexGrow: 1 }}>
+        <div className="healthBarContainer">
+          <p className="healthBarValue">{value}</p>
           <BorderLinearProgress
             variant="determinate"
             value={value}
             sx={{
-              height: "17px",
-              marginTop: "50px",
+              height: "30px",
             }}
           />
-        </Box>
+        </div>
       </div>
     </>
   );
