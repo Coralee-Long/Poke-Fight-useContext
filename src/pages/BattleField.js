@@ -8,6 +8,10 @@ import { Loop } from "@mui/icons-material";
 import EndBattleModel from "../Modals/EndBattleModel";
 import { useNavigate } from "react-router-dom";
 
+//code to persist usestate
+// import { createBrowserHistory } from "history";
+// import qs from "qs";
+
 const BattleField = () => {
   const {
     error,
@@ -33,21 +37,54 @@ const BattleField = () => {
     endBattleModelState;
   const [confirmModelStateValue, setConfirmModelStateValue] = confirmModelState;
   const [playGame, setPlayGame] = useState(false);
+  const [disableButton, setDisableButton] = useState(false);
 
   let navigate = useNavigate();
+
+  //************************persist singlePokeValue  */
+  // const history = createBrowserHistory();
+  // useEffect(() => {
+  //   const filterParams = history.location.search.substr(1);
+  //   const filtersFromParams = qs.parse(filterParams);
+  //   if (filtersFromParams.singlePokeValue) {
+  //     setSinglePokeValue(Array(filtersFromParams.singlePokeValue));
+  //   }
+  // }, []);
+  // console.log(singlePokeValue);
+  // useEffect(() => {
+  //   history.push(`?singlePokeValue=${singlePokeValue}`);
+  // }, [singlePokeValue]);
+
   //*********************************Code for Battle******************** */
+  //get lblUserPoints
+  const lblUserPoints = document.getElementById("lblUserPoints");
+  const lblComputerPoints = document.getElementById("lblComputerPoints");
+  //const btnAttack = document.getElementById("btnAttack");
 
   const startFightHandler = () => {
+    lblUserPoints.innerText = "";
+    lblComputerPoints.innerText = "";
+    //clearInterval(myInterval);
+    setDisableButton(true);
+
     if (userHealthValue > 0 && computerHealthValue > 0) {
+      // User attacks:
       attack(singlePokeValue.base.Attack, randomPokeValue.base.Defense, "user");
+
       if (userHealthValue > 0 && computerHealthValue > 0) {
-        attack(
-          randomPokeValue.base.Attack,
-          singlePokeValue.base.Defense,
-          "computer"
-        );
+        // Computer attacks:
+        setTimeout(() => {
+          attack(
+            randomPokeValue.base.Attack,
+            singlePokeValue.base.Defense,
+            "computer"
+          );
+          setDisableButton(false);
+        }, 10000); // 10 sec
       }
     }
+
+    //clearInterval(myInterval);
   };
 
   //go back to welcome page
@@ -60,19 +97,25 @@ const BattleField = () => {
   };
 
   const attack = async (attackValue, defendValue, warriorType) => {
+    //clear the attack and defence value from label
+    // lblUserPoints.innerText = "";
+    // lblComputerPoints.innerText = "";
+
     if (attackValue > defendValue) {
       let attackDifference = attackValue - defendValue;
 
-      // Scenario 1
+      // Scenario 1: User Attacks (Attack Value > Opponent Defense Value)
       if (warriorType === "user") {
         if (attackDifference < computerHealthValue) {
           setComputerHealthValue(
             (prev) => prev - attackDifference
             //         100 -  (60att - 30def) = 60(setComputerHealth to ...)
           );
-          console.log("inside if(first step 1) where warrior type===user");
-          console.log(`UserAttack: ${attackValue}`);
-          console.log(`ComputerDefend: ${defendValue}`);
+          //set the attack value
+          lblComputerPoints.innerText = `${singlePokeValue.name.english} attacks with: ${attackValue}.
+          ${randomPokeValue.name.english} defends with:${defendValue}.
+          ${randomPokeValue.name.english} loses ${attackDifference} health
+          points.`;
         } else {
           setComputerHealthValue(0);
         }
@@ -84,11 +127,11 @@ const BattleField = () => {
             (prev) => prev - attackDifference
             //         100 -  (50 - 30) = 80 (setComputerHealth to 80%)
           );
-          console.log(
-            "inside else if((first step 1)) where warrior type===computer"
-          );
-          console.log(`ComputerAttack: ${attackValue}`);
-          console.log(`UserDefend: ${defendValue}`);
+          //set the attack value
+          lblUserPoints.innerText = `${randomPokeValue.name.english} attacks with: ${attackValue}.
+          ${singlePokeValue.name.english} defends with:${defendValue}.
+          ${singlePokeValue.name.english} loses ${attackDifference} health
+          points.`;
         } else {
           setUserHealthValue(0);
         }
@@ -104,9 +147,11 @@ const BattleField = () => {
             (prev) => prev - defenceDifference
             //         100 -  (50 - 30) = 80 (setComputerHealth to 80%)
           );
-          console.log("inside else( step -2 ) where warrior type===user");
-          console.log(`UserAttack: ${attackValue}`);
-          console.log(`ComputerDefend: ${defendValue}`);
+          //set the attack value
+          lblUserPoints.innerText = `${singlePokeValue.name.english} attacks with: ${attackValue}.
+          ${randomPokeValue.name.english} defends with:${defendValue}.
+          ${singlePokeValue.name.english} loses ${defenceDifference} health
+          points`;
         } else {
           setUserHealthValue(0);
         }
@@ -118,11 +163,11 @@ const BattleField = () => {
             (prev) => prev - defenceDifference
             //         100 -  (50 - 30) = 80 (setComputerHealth to 80%)
           );
-          console.log(
-            "inside else if( step -1 ) where warrior type===computer"
-          );
-          console.log(`ComputerAttack: ${attackValue}`);
-          console.log(`UserDefend: ${defendValue}`);
+          //set the attack value
+          lblComputerPoints.innerText = `${randomPokeValue.name.english} attacks with: ${attackValue}.
+          ${singlePokeValue.name.english} defends with:${defendValue}.
+          ${randomPokeValue.name.english} loses ${defenceDifference} health
+          points.`;
         } else {
           setComputerHealthValue(0);
         }
@@ -136,20 +181,12 @@ const BattleField = () => {
     (async function () {
       if (userHealthValue <= 0) {
         setUserHealthValue(0);
-        //setWinner(singlePokeValue);
         setEndBattleModelStateValue(true);
-        setWinnerValue(singlePokeValue);
-        console.log("winner");
-        console.log(winnerValue);
-        // await alert(`${singlePokeValue.name.english} LOST!`);
+        setWinnerValue(randomPokeValue);
       } else if (computerHealthValue <= 0) {
         setComputerHealthValue(0);
-        //setWinner(singlePokeValue);
         setEndBattleModelStateValue(true);
         setWinnerValue(singlePokeValue);
-        console.log(`winner: ${winnerValue}`);
-
-        // await alert(`${randomPokeValue.name.english} LOST!`);
       }
     })();
   }, [computerHealthValue, userHealthValue, winner]);
@@ -165,12 +202,15 @@ const BattleField = () => {
         Have to shift logic of getting random poke to here and the pass that as computer poke
         */}
         <Button
+          id="btnAttack"
           className="ButtonAction"
           variant="contained"
           value="attack"
           onClick={startFightHandler}
+          name="btnAttack"
+          disabled={disableButton}
         >
-          ATTACK
+          Attack
         </Button>
         <Button
           className="ButtonAction"
@@ -180,9 +220,12 @@ const BattleField = () => {
           BACK
         </Button>
       </div>
+      <div className="battleComments">
+        <label name="lblUserPoints" id="lblUserPoints"></label>
+        <label name="lblComputerPoints" id="lblComputerPoints"></label>
+      </div>
       <div className="BattleMainContainer">
-        {singlePokeValue !== null ? <UserPoke /> : <div></div>}
-
+        {singlePokeValue.length !== 0 ? <UserPoke /> : navigate("/welcome")}
         <ComputerPoke />
       </div>
       <div>{winnerValue !== null ? <EndBattleModel /> : <div></div>}</div>

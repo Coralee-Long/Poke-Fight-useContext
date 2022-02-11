@@ -12,6 +12,8 @@
 
 .css-fj2wnt-MuiLinearProgress-root .MuiLinearProgress-bar {
   border-radius: 1px !important;
+  /* background-clip: inherit;
+  color: transparent; */
   /* background-color: orange !important; */
   background: linear-gradient(270deg, red, yellow) !important;
 }

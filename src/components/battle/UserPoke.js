@@ -11,13 +11,9 @@ const UserPoke = () => {
   const [userHealthValue, setUserHealthValue] = userHealth;
 
   const [error, setError] = useState(false);
-  console.log("user poke:");
-  // console.log(singlePokeValue);
 
   useEffect(() => {
     if (singlePokeValue === undefined) {
-      console.log("Hello");
-      console.log(singlePokeValue);
       setError(true);
       navigate("/welcome");
     }
@@ -29,6 +25,7 @@ const UserPoke = () => {
         <div className="healthBarUserContainer">
           <UserHealthBar value={userHealthValue} />
         </div>
+
         <h1 className="BattleMainHeading">{singlePokeValue.name.english}</h1>
 
         <img

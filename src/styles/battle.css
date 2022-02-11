@@ -36,6 +36,21 @@ body {
   filter: drop-shadow(20px 15px 25px rgba(0, 0, 0, 0.5));
 }
 
+.healthBarValue {
+  font-size: 6rem;
+  text-transform: uppercase;
+  font-weight: 800;
+  text-align: center;
+  /*creates image consisting of pregressive transitiopn between 2 or more colors*/
+  background: linear-gradient(90deg, red, yellow);
+  /* The background-clip CSS property sets whether an element's background
+  extends underneath its border box, padding box, or content box. */
+  background-clip: text;
+  color: transparent;
+  /* The drop-shadow() CSS function applies a drop shadow effect to the input image.  */
+  filter: drop-shadow(20px 15px 25px rgba(0, 0, 0, 0.5));
+}
+
 .UserMainContainer {
   display: flex;
   flex-direction: column;
@@ -96,4 +111,11 @@ body {
   height: 70px !important;
   font-size: 1.5em !important;
   background-color: blueviolet !important;
+}
+
+.battleComments {
+  width: 80%;
+  padding: 40px;
+  font-size: 2rem;
+  text-align: center;
 }
