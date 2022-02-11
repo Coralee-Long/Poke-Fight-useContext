@@ -14,8 +14,10 @@ export const PokeController = (props) => {
   const [loadingSingle, setLoadingSingle] = useState(false);
   const [basicModelState, setBasicModelState] = useState(false);
   const [confirmModelState, setConfirmModelState] = useState(false);
+  const [endBattleModelState, setEndBattleModelState] = useState(false);
   const [userHealth, setUserHealth] = useState(100);
   const [computerHealth, setComputerHealth] = useState(100);
+  const [winner, setWinner] = useState(null);
 
   // FETCHING ALL DATA:
   //fetch all Pokemon
@@ -73,9 +75,11 @@ export const PokeController = (props) => {
         loadingSingle: [loadingSingle, setLoadingSingle],
         basicModelState: [basicModelState, setBasicModelState],
         confirmModelState: [confirmModelState, setConfirmModelState],
+        endBattleModelState: [endBattleModelState, setEndBattleModelState],
         randomPoke: [randomPoke, setRandomPoke],
         userHealth: [userHealth, setUserHealth],
         computerHealth: [computerHealth, setComputerHealth],
+        winner: [winner, setWinner],
       }}
     >
       {props.children}

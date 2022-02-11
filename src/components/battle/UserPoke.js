@@ -1,7 +1,9 @@
-import React from "react";
 import UserHealthBar from "./UserHealthBar";
-import { useContext, useState } from "react";
+import { useContext, useState, useEffect } from "react";
 import { PokeContext } from "../../context/pokeContext";
+import { useNavigate } from "react-router-dom";
+
+const navigate = useNavigate;
 
 const UserPoke = () => {
   const { singlePoke, userHealth } = useContext(PokeContext);
@@ -9,12 +11,19 @@ const UserPoke = () => {
   const [userHealthValue, setUserHealthValue] = userHealth;
 
   const [error, setError] = useState(false);
-  // console.log("user poke:");
+  console.log("user poke:");
   // console.log(singlePokeValue);
-  if (!singlePokeValue) {
-    setError(true);
-  }
-  if (!error)
+
+  useEffect(() => {
+    if (singlePokeValue === undefined) {
+      console.log("Hello");
+      console.log(singlePokeValue);
+      setError(true);
+      navigate("/welcome");
+    }
+  }, []);
+
+  if (singlePokeValue !== undefined)
     return (
       <div className="UserMainContainer">
         <div className="healthBarUserContainer">

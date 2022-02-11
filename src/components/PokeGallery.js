@@ -4,8 +4,8 @@ import ImageListItem from "@mui/material/ImageListItem";
 import ImageListItemBar from "@mui/material/ImageListItemBar";
 import ListSubheader from "@mui/material/ListSubheader";
 import "../styles/mui_styles.css";
-import BasicModel from "./BasicModel";
-import ConfirmModel from "./ConfirmModel";
+import BasicModel from "../Modals/BasicModel";
+import ConfirmModel from "../Modals/ConfirmModel";
 import { PokeContext } from "../context/pokeContext";
 
 const PokeGallery = () => {
