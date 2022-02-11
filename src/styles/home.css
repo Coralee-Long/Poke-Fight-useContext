@@ -20,7 +20,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 3em;
+  font-size: 2.5em;
   /* padding-bottom: 1em;
   padding-top: 2em; */
   height: 40%;
@@ -52,8 +52,41 @@
   height: 70px !important;
   font-size: 1.5em !important;
   margin-right: 40px !important;
+  background-color: green !important;
+}
+
+.btnSignUp{
+  width: 100px !important;
+  height: 40px !important;
+  background-color: blue !important;
 }
 
 .headingWelcome {
   color: blue;
+}
+
+.mainDivRegister{
+  max-height: 100vh;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* justify-content: center; */
+  text-align: center;
+   }
+
+.divFormRegister{
+  width: 30%;
+  display: block;
+  height: 60%;
+}
+
+.mainDivRegisterTitle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1em;
+  /* padding-bottom: 1em;
+  padding-top: 2em; */
+  height: 10%;
 }

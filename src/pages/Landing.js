@@ -7,7 +7,7 @@ const Landing = () => {
     <>
       <div className="mainDivLanding mainBackground">
         <div className="mainDivLandingTitle">
-          <h1 className="headingWelcome">WELCOME TO POKEMON FIGHT </h1>
+          <h1 className="headingWelcome">READY TO FIGHT WITH POKEMON</h1>
         </div>
         <div className="mainDivLandingLinks">
           <Link to="/login" className="linkLanding">

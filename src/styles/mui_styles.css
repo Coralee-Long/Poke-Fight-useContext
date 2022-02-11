@@ -25,3 +25,19 @@
 .css-5xe99f-MuiLinearProgress-bar1 {
   background: linear-gradient(90deg, red, yellow, green) !important;
 }
+
+/* .registerDiv{
+  display: 'flex';
+  flex-direction: 'column';
+  justify-content: 'center';
+  align-Items: 'center';
+  padding: theme.spacing(2),
+'& .MuiTextField-root': {
+    margin: theme.spacing(1),
+    width: '300px',
+  }
+  ,
+'& .MuiButtonBase-root': {
+    margin: theme.spacing(2),
+  },
+}, */
