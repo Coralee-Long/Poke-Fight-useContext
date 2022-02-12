@@ -80,7 +80,7 @@ const BattleField = () => {
             "computer"
           );
           setDisableButton(false);
-        }, 10000); // 10 sec
+        }, 5000); // 5 sec
       }
     }
 

@@ -243,6 +243,21 @@ background-position: center; */
   }
 }
 
+.wonMessage{
+  font-size: 2.5em;
+  color:blue;
+}
+
+.boxWinner{
+  background-image: url('../backgrounds/WinnerImage.jpg');
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
 @media screen and (max-width: 720px) {
   #pokeImage {
     height: 200px;
