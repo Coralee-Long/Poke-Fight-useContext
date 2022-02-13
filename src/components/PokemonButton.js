@@ -52,12 +52,21 @@ const PokemonButton = () => {
     //e.target.style.backgroundcolor = "white";
   };
 
+  useEffect(() => {
+    if (typeValue === "Normal") {
+      console.log("Inside normal if")
+      const btnNormal = document.getElementById("Normal");
+      btnNormal.style.color = "blue";
+    }
+  }, [typeValue])
+
   return (
     <>
       <form onSubmit={handleSubmit}>
         <div className="button-container">
           {pokemonTypes.map((p, index) => (
             <Button
+              id={p}
               type="submit"
               name={p}
               value={p}

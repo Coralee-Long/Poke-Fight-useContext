@@ -27,6 +27,7 @@ const BattleField = () => {
     winner,
     confirmModelState,
     details,
+    type,
   } = useContext(PokeContext);
   const [errorValue, setErrorValue] = error;
   const [loadingValue, setLoadingValue] = loading;
@@ -42,7 +43,7 @@ const BattleField = () => {
   const [playGame, setPlayGame] = useState(false);
   const [disableButton, setDisableButton] = useState(false);
   const [detailsValue, setDetailsValue] = details;
-
+  const [typeValue, setTypeValue] = type;
 
   let navigate = useNavigate();
 
@@ -80,6 +81,7 @@ const BattleField = () => {
     setConfirmModelStateValue(false);
     setUserHealthValue(100);
     setComputerHealthValue(100);
+    setTypeValue("Normal");
     navigate("/welcome");
   };
 
