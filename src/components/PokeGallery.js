@@ -5,12 +5,31 @@ import ImageListItemBar from "@mui/material/ImageListItemBar";
 import ListSubheader from "@mui/material/ListSubheader";
 import "../styles/battle.css";
 import "../styles/home.css";
-import "../styles/mui_styles.css";
+//import "../styles/mui_styles.css";
 import BasicModel from "../Modals/BasicModel";
 import ConfirmModel from "../Modals/ConfirmModel";
 import { PokeContext } from "../context/pokeContext";
+import { makeStyles } from '@material-ui/core';
+
+//mui list item style
+const useStyles = makeStyles(theme => ({
+  root: {
+    width: '100%',
+    height: '100%',
+    // '& .MuiImageList-root': {
+    //   width: '100%',
+    //   height: '100%',
+    // }
+  },
+  // imageList: {
+  //   width: '100%',
+  //   height: '100%',
+  // },
+}));
 
 const PokeGallery = () => {
+
+  const classes = useStyles();
   // ERROR & LOADING STATES DEFINED:
   const {
     singlePoke,
@@ -56,6 +75,7 @@ const PokeGallery = () => {
       id="imgList"
       sx={{ width: 200, height: 450 }}
       style={{ gridTemplateColumns: "auto minmax(1fr,1fr, 1fr, 1fr)" }}
+      className={classes.root}
     >
       {loadingSingleValue === false ? (
         <>
