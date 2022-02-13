@@ -125,7 +125,7 @@
   align-self: right;
   width:auto;
   margin-left:70%;
-  margin-top: 5px;
+  padding-top: 5px;
   margin-right:3%;
 }
 
@@ -143,25 +143,29 @@
   
 }
 
-.css-1jz7hv7-MuiImageList-root {
+/**************css from mui-styles.css*************/
+/*for Image list - pokegallery*/
+/* .css-1jz7hv7-MuiImageList-root {
   width:100% !important;
   height: 100% !important;
+} */
   /* width: 100vw !important;
   height: 100vh !important; //commented-13-02-2022 */
   /* overflow-y: scroll; */
-}
 
 /* Health Bar Outline */
-.css-10cf9xi-MuiLinearProgress-root {
+/* .css-10cf9xi-MuiLinearProgress-root {
   width: 100%;
   height: 100%;
   background-color: rgba(255, 255, 255, 0.7) !important;
   border: 3.5px solid #3667b0;
   border-radius: 12px !important;
   filter: drop-shadow(10px 10px 10px rgba(0, 0, 0, 0.4));
-}
+} */
 
 /* Health-Bar Inner */
-.css-5xe99f-MuiLinearProgress-bar1 {
+/* .css-5xe99f-MuiLinearProgress-bar1 {
   background: linear-gradient(90deg, red, yellow, green) !important;
-}
+} */
+
+/**************css from mui-styles.css*************/
