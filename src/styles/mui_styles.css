@@ -1,7 +1,9 @@
 /* // image gallery */
 .css-1jz7hv7-MuiImageList-root {
-  width: 100vw !important;
-  height: 100vh !important;
+  width:100% !important;
+  height: 100% !important;
+  /* width: 100vw !important;
+  height: 100vh !important; //commented-13-02-2022 */
   /* overflow-y: scroll; */
 }
 /* Buttons above image gallery */

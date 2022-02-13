@@ -25,9 +25,11 @@ body {
 /* background-repeat: no-repeat;
 background-position: center; */
 .BattleBackground {
-  height: 100vh !important;
+  /* height: 100vh !important; //commented on 13-02-2022 */
+  height: 120vh !important;
   width: 100vw;
-  background-image: url("../backgrounds/25.jpg");
+  /* background-image: url("../backgrounds/25.jpg"); */
+  background-image: url("../backgrounds/blue-background-4.jpg");
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -36,21 +38,28 @@ background-position: center; */
   background-position: center;
 }
 
-.back {
-  max-height: 5%;
-  min-height: 5%;
+.divBack {
+  max-height: 15%;
+  min-height: 15%;
   display: flex;
+  /* added on 13-02-2022 */
+  justify-content: right;
+  align-items: right;
+  width:50%;
+  margin-right: 3%;
 }
+
 .topDiv {
-  max-height: 25%;
-  min-height: 25%;
-  display: flex;
+  max-height: 15%;
+  min-height: 15%;
+  display: flex; 
   align-items: center;
+  justify-content: center;
 }
 
 .middleDiv {
-  max-height: 55%;
-  min-height: 55%;
+  max-height: 70%;
+  min-height: 70%;
   display: flex;
   align-items: center;
 }
@@ -59,11 +68,44 @@ background-position: center; */
   max-height: 15%;
   min-height: 15%;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100vw;
-  display: flex;
+  /* justify-content: center;
+  align-items: center; */
+  justify-content: right;
+  align-items: right;
+  width: 50%; 
+  margin-left:10%; 
 }
+
+.divBattleButtons{
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 10px;
+}
+
+.DivActionButtons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.ButtonAttack {
+  width: 250px !important;
+  height: 60px !important;
+  font-size: 1.5em !important;
+  background-color: blueviolet !important;
+  }
+
+.ButtonBack {
+  /* background-color: red !important;
+  width: 130px !important;
+  height: 50px !important;
+  margin: 30px 0 0 30px !important; */
+  width: 150px !important;
+  height: 60px !important;
+  font-size: 1.5em !important;
+  background-color: blueviolet !important;
+  }
 
 .BattleMainContainer {
   max-height: 60vh !important;
@@ -74,10 +116,10 @@ background-position: center; */
 
 .BattleMainHeading {
   display: flex;
-  padding-top: 5%;
+  padding-top: 2%;
   font-family: "Pocket Monk";
-  letter-spacing: 3px;
-  font-size: 6rem;
+  letter-spacing: 6px;
+  font-size: 3em;
   text-transform: uppercase;
   font-weight: 800;
   text-align: center;
@@ -112,8 +154,9 @@ background-position: center; */
 
 #pokeImage {
   display: flex;
-  height: 500px;
+  height: 400px;
   width: auto;
+  margin:0px;
 }
 
 @media screen and (max-width: 1280px) {
@@ -144,27 +187,6 @@ background-position: center; */
   filter: drop-shadow(20px 15px 25px rgba(0, 0, 0, 0.5));
 }
 
-.DivActionButtons {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-}
-
-.ButtonAttack {
-  width: 250px !important;
-  height: 80px !important;
-  font-size: 1.5em !important;
-  background-color: blueviolet !important;
-}
-
-.ButtonBack {
-  background-color: red !important;
-  width: 130px !important;
-  height: 50px !important;
-  margin: 30px 0 0 30px !important;
-}
-
 .battleComments {
   display: flex;
   background-color: rgba(255, 255, 255, 0.8);
@@ -172,15 +194,16 @@ background-position: center; */
   border-radius: 12px;
   width: 50%;
   height: 100%;
-  padding: 2rem;
+  /* padding: 2rem; */
   font-family: "Pocket Monk";
   line-height: 125%;
   letter-spacing: 1px;
-  font-size: 2.8rem;
+  /* font-size: 2.8rem; */
+  font-size: 1.8em;
   text-align: center;
   -webkit-text-stroke: 2px #3667b0;
   color: #ffcb04;
-
+  margin-bottom: 1%;
   /* background: linear-gradient(90deg, red, yellow, green) !important; */
 }
 
@@ -205,7 +228,7 @@ background-position: center; */
   padding: 0 15px 0 0;
   font-family: "Pocket Monk";
   letter-spacing: 1px;
-  font-size: 4rem;
+  font-size: 3rem;
   text-transform: uppercase;
   text-align: center;
   -webkit-text-stroke: 3px #3667b0;
@@ -245,17 +268,35 @@ background-position: center; */
 
 .wonMessage{
   font-size: 2.5em;
-  color:blue;
+  color:darkmagenta;
+}
+
+.btnFightAgain{
+  margin-top: 30px !important;
+  background-color: darkmagenta !important;
+}
+
+.btnConfirm{
+  margin-top: 30px !important;
+  background-color: darkmagenta !important;
+  width:210px !important;
+  height: 50px !important;
 }
 
 .boxWinner{
-  background-image: url('../backgrounds/WinnerImage.jpg');
+  background-image: url('../backgrounds/WinnerImage_2.jpg');
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
+}
+
+.headingPokeType{
+font-size: 1.3em;
+color:mediumpurple;
+text-transform: uppercase;
 }
 
 @media screen and (max-width: 720px) {
@@ -269,7 +310,7 @@ background-position: center; */
   .healthBarContainer {
     flex-shrink: 2;
   }
-  .ButtonAttack {
+  .ButtonAttack,.ButtonBack {
     width: 10px !important;
     height: 50px !important;
     font-size: 1em !important;
