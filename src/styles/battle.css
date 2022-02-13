@@ -310,7 +310,7 @@ text-transform: uppercase;
   .healthBarContainer {
     flex-shrink: 2;
   }
-  .ButtonAttack {
+  .ButtonAttack,.ButtonBack {
     width: 10px !important;
     height: 50px !important;
     font-size: 1em !important;

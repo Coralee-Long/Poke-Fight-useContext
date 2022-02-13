@@ -37,6 +37,16 @@ const PokemonButton = () => {
   const handleClick = (e) => {
     setTypeValue(e.target.value);
     //console.log(type);
+    //find all buttons
+    const buttons = e.target.form.getElementsByClassName("btnPokes");
+    //set button colors back to normal
+    for (let i = 0; i < buttons.length; i++) {
+      console.log("inside buttons")
+      buttons[i].style.color = "white";
+    }
+    //set selected button color to blue
+    e.target.style.color = "blue";
+    //e.target.style.backgroundcolor = "white";
   };
 
   return (
