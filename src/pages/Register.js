@@ -69,21 +69,6 @@ const Register = () => {
                     <TextField fullWidth label="Last Name" variant="filled" required value={lastName} onChange={(e) => setLastName(e.target.value)} />
                     <TextField fullWidth label="Email" variant="filled" type="email" required value={email} onChange={(e) => setEmail(e.target.value)} />
                     <TextField fullWidth label="Password" variant="filled" type="password" required value={password} onChange={(e) => setPassword(e.target.value)} />
-                    {/* <div>
-                        <label htmlFor="firstname">First Name</label>
-                        <input name="firstname" type="text" placeholder="Enter your first name" value={firstName} onChange={(e) => setFirstName(e.target.value)}></input>
-                    </div>
-                    <div>
-                        <label htmlFor="lastname">Last Name</label>
-                        <input type="text" name="lastname" placeholder="Enter your last name" value={lastName} onChange={(e) => setLastName(e.target.value)}></input>
-                    </div>
-                    <div>
-                        <label htmlFor="emal">Email</label>
-                        <input type="email" name="email" placeholder="Enter your email" value={email} onChange={(e) => setEmail(e.target.value)}></input>
-                    </div>
-                    <div> <label htmlFor="password">Password</label>
-                        <input name="password" type="password" placeholder="Enter your password" value={password} onChange={(e) => setPassword(e.target.value)}></input>
-                    </div> */}
                     <div>
                         <Button className="btnSignUp" type="submit" variant="contained" color="primary">Sign Up</Button>
                         <Button className="btnSignUp" variant="contained" color="primary" onClick={() => navigate('/')}>Cancel</Button>

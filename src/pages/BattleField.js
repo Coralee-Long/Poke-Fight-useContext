@@ -24,6 +24,7 @@ const BattleField = () => {
     endBattleModelState,
     winner,
     confirmModelState,
+    details,
   } = useContext(PokeContext);
   const [errorValue, setErrorValue] = error;
   const [loadingValue, setLoadingValue] = loading;
@@ -38,28 +39,12 @@ const BattleField = () => {
   const [confirmModelStateValue, setConfirmModelStateValue] = confirmModelState;
   const [playGame, setPlayGame] = useState(false);
   const [disableButton, setDisableButton] = useState(false);
+  const [detailsValue, setDetailsValue] = details;
 
   let navigate = useNavigate();
 
-  //************************persist singlePokeValue  */
-  // const history = createBrowserHistory();
-  // useEffect(() => {
-  //   const filterParams = history.location.search.substr(1);
-  //   const filtersFromParams = qs.parse(filterParams);
-  //   if (filtersFromParams.singlePokeValue) {
-  //     setSinglePokeValue(Array(filtersFromParams.singlePokeValue));
-  //   }
-  // }, []);
-  // console.log(singlePokeValue);
-  // useEffect(() => {
-  //   history.push(`?singlePokeValue=${singlePokeValue}`);
-  // }, [singlePokeValue]);
-
-  //*********************************Code for Battle******************** */
   //get lblUserPoints
   const lblUserPoints = document.getElementById("lblUserPoints");
-  // const lblComputerPoints = document.getElementById("lblComputerPoints");
-  //const btnAttack = document.getElementById("btnAttack");
 
   const startFightHandler = () => {
     // lblUserPoints.innerText = "";
@@ -80,11 +65,10 @@ const BattleField = () => {
             "computer"
           );
           setDisableButton(false);
-        }, 5000); // 5 sec
+        }, 2000); // 2 sec
       }
     }
 
-    //clearInterval(myInterval);
   };
 
   //go back to welcome page
@@ -173,6 +157,11 @@ const BattleField = () => {
     }
   };
 
+  const handleLogout = () => {
+    localStorage.removeItem("usertoken");
+    navigate('/')
+  }
+
   useEffect(() => {
     (async function () {
       if (userHealthValue <= 0) {
@@ -193,39 +182,45 @@ const BattleField = () => {
   if (errorValue) return <h1>Something is wrong....</h1>;
   return (
     <div className="BattleBackground">
-      <div className="back">
-        <Button
-          className="ButtonBack"
-          variant="contained"
-          onClick={goBackHandler}
-        >
-          BACK
-        </Button>
+      <div className="divUserInfo">
+        {/* <img src={`../backgrounds/userIcon.jpg`} alt="user icon" /> */}
+        <p className="headingUsername">username : {`${detailsValue.firstName} ${detailsValue.lastName}`}</p>
+        <Button variant="text" className="btnSignOut" onClick={handleLogout}>Log Out</Button>
+      </div>
+      <div className="divBattleButtons">
+        <div className="bottomDiv">
+          <Button
+            id="btnAttack"
+            className="ButtonAttack"
+            variant="contained"
+            value="attack"
+            onClick={startFightHandler}
+            name="btnAttack"
+            disabled={disableButton}
+          >
+            Attack
+          </Button>
+        </div>
+        <div className="divBack">
+          <Button
+            className="ButtonBack"
+            variant="contained"
+            onClick={goBackHandler}
+          >
+            BACK
+          </Button>
+        </div>
+
       </div>
       <div className="topDiv">
         <div className="battleComments">
           <label name="lblUserPoints" id="lblUserPoints"></label>
         </div>
       </div>
-
       <div className="middleDiv">
         {singlePokeValue.length !== 0 ? <UserPoke /> : navigate("/welcome")}
         <ComputerPoke />
-
         <>{winnerValue !== null ? <EndBattleModel /> : <></>}</>
-      </div>
-      <div className="bottomDiv">
-        <Button
-          id="btnAttack"
-          className="ButtonAttack"
-          variant="contained"
-          value="attack"
-          onClick={startFightHandler}
-          name="btnAttack"
-          disabled={disableButton}
-        >
-          Attack
-        </Button>
       </div>
     </div>
   );

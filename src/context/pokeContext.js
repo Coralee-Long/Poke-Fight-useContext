@@ -18,6 +18,13 @@ export const PokeController = (props) => {
   const [userHealth, setUserHealth] = useState(100);
   const [computerHealth, setComputerHealth] = useState(100);
   const [winner, setWinner] = useState(null);
+  //get user profile info
+  const [details, setDetails] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+  })
+
 
   // FETCHING ALL DATA:
   //fetch all Pokemon
@@ -80,6 +87,7 @@ export const PokeController = (props) => {
         userHealth: [userHealth, setUserHealth],
         computerHealth: [computerHealth, setComputerHealth],
         winner: [winner, setWinner],
+        details: [details, setDetails],
       }}
     >
       {props.children}
