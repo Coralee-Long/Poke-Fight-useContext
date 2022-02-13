@@ -52,6 +52,7 @@ const PokemonButton = () => {
               variant="contained"
               style={{ margin: "70px !important" }}
               key={index}
+              className="btnPokes"
             >
               {p}
             </Button>

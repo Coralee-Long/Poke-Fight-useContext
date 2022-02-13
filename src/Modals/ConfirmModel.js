@@ -40,21 +40,26 @@ export default function ConfirmModel() {
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
       >
-        <Box sx={confirmModelStyle}>
-          <p>You chose {singlePokeValue.name.english}</p>
+        <Box sx={confirmModelStyle} className="boxWinner">
+          <h1>You chose {singlePokeValue.name.english}</h1>
           <img
             src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/${singlePokeValue.id}.png`}
             alt={singlePokeIdValue.name}
-            width="50px"
-            height="50px"
+            width="250px"
+            height="250px"
           />
-          <p>ARE YOU SURE?</p>
-          <Button variant="outlined" onClick={handleCloseConfirm}>
-            Choose another Poke
-          </Button>
-          <Button variant="outlined" onClick={() => navigate("/battle")}>
-            Fight with this Poke
-          </Button>
+
+          <div>
+            <Button variant="contained" className="btnConfirm" onClick={() => navigate("/battle")}>
+              Fight with this Poke
+            </Button>
+          </div>
+
+          <div>
+            <Button className="btnConfirm" variant="contained" onClick={handleCloseConfirm}>
+              Choose another Poke
+            </Button>
+          </div>
         </Box>
       </Modal>
     </>

@@ -49,7 +49,7 @@ export default function BasicModel() {
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
       >
-        <Box sx={style}>
+        <Box sx={style} className="boxWinner">
           <Typography id="modal-modal-title" variant="h6" component="h2">
             <div>
               <h1>{singlePokeValue.name.english}</h1>
@@ -57,13 +57,13 @@ export default function BasicModel() {
                 <img
                   src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/${singlePokeValue.id}.png`}
                   alt={singlePokeValue.name.english}
-                  width="150px"
-                  height="150px"
+                  width="100px"
+                  height="100px"
                 />
               </div>
               {singlePokeValue.type.map((poketype, index) => (
                 <div key={index}>
-                  <p>{poketype}</p>
+                  <h3 className="headingPokeType">{poketype}</h3>
                 </div>
               ))}
               <ul key={singlePokeValue.id}>
@@ -76,7 +76,8 @@ export default function BasicModel() {
               </ul>
             </div>
             <Button
-              variant="outlined"
+              className="btnFightAgain"
+              variant="contained"
               color="error"
               onClick={handleOpenConfirm}
             >

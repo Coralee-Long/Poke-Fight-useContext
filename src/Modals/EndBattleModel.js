@@ -56,9 +56,11 @@ export default function EndBattleModel() {
         onClose={handleCloseConfirm}
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
+        height="500px"
+        width="500px"
       >
         <Box sx={endBattleModelStyle} m="auto" className="boxWinner">
-          <p className="wonMessage">{winnerValue.name.english} won!!!</p>
+          <p className="wonMessage">Winner is <span style={{ fontWeight: "bold" }}> {winnerValue.name.english}</span>!!!</p>
           <img
             src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/${winnerValue.id}.png`}
             alt={winnerValue.name.english}
@@ -67,8 +69,8 @@ export default function EndBattleModel() {
           />
           {/* <Button variant="outlined" onClick={() => navigate("/welcome")}> */}
           <div>
-            <Button variant="outlined" color="error" size="large" onClick={handleCloseConfirm}>
-              Fight Again!!!
+            <Button className="btnFightAgain" variant="contained" size="large" onClick={handleCloseConfirm}>
+              Continue Fight!!!
             </Button>
           </div>
         </Box>

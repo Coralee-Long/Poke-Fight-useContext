@@ -5,12 +5,15 @@ import "../styles/home.css";
 const Home = () => {
   return (
     <>
-      <h1>Welcome to the Pokemon Games</h1>
-      <p>Select your Pokemon for the fight</p>
-      <PokemonButton />
-      {/* // Gallery COMPONENT: */}
-      <div>
-        <PokeGallery />
+      <div className="mainDivHome">
+        {/* <h1>Welcome to the Pokemon Games</h1> */}
+        <h1 className="headingHome">SELECT YOUR POKEMON FOR FIGHT</h1>
+        <PokemonButton />
+        {/* // Gallery COMPONENT: */}
+        <div>
+          <PokeGallery />
+        </div>
+
       </div>
     </>
   );

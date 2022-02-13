@@ -245,17 +245,35 @@ background-position: center; */
 
 .wonMessage{
   font-size: 2.5em;
-  color:blue;
+  color:darkmagenta;
+}
+
+.btnFightAgain{
+  margin-top: 30px !important;
+  background-color: darkmagenta !important;
+}
+
+.btnConfirm{
+  margin-top: 30px !important;
+  background-color: darkmagenta !important;
+  width:210px !important;
+  height: 50px !important;
 }
 
 .boxWinner{
-  background-image: url('../backgrounds/WinnerImage.jpg');
+  background-image: url('../backgrounds/WinnerImage_2.jpg');
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
+}
+
+.headingPokeType{
+font-size: 1.3em;
+color:mediumpurple;
+text-transform: uppercase;
 }
 
 @media screen and (max-width: 720px) {

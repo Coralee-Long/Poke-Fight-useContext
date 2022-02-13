@@ -70,7 +70,7 @@ const PokeGallery = () => {
         <ImageListItem
           key={poke.id}
           onClick={handleOpen}
-          style={{ backgroundColor: "lightblue" }}
+          style={{ backgroundColor: "white" }}
         >
           <img
             src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/${poke.id}.png`}
