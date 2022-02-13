@@ -2,6 +2,9 @@ import UserHealthBar from "./UserHealthBar";
 import { useContext, useState, useEffect } from "react";
 import { PokeContext } from "../../context/pokeContext";
 import { useNavigate } from "react-router-dom";
+// import "../styles/battle.css";
+// import "../styles/home.css";
+// import "../styles/mui_styles.css";
 
 const navigate = useNavigate;
 

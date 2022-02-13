@@ -5,6 +5,9 @@ import Modal from "@mui/material/Modal";
 import { useNavigate } from "react-router-dom";
 import { PokeContext } from "../context/pokeContext";
 import { WifiChannelSharp } from "@mui/icons-material";
+import "../styles/battle.css";
+import "../styles/home.css";
+import "../styles/mui_styles.css";
 
 const endBattleModelStyle = {
   position: "absolute",

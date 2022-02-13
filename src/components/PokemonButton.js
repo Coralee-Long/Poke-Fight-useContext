@@ -1,6 +1,9 @@
 import { useState, useEffect, useContext } from "react";
 import Button from "@mui/material/Button";
 import { PokeContext } from "../context/pokeContext";
+import "../styles/battle.css";
+import "../styles/home.css";
+import "../styles/mui_styles.css";
 
 const PokemonButton = () => {
   const { type } = useContext(PokeContext);

@@ -4,6 +4,9 @@ import Button from "@mui/material/Button";
 import Modal from "@mui/material/Modal";
 import { useNavigate } from "react-router-dom";
 import { PokeContext } from "../context/pokeContext";
+import "../styles/battle.css";
+import "../styles/home.css";
+import "../styles/mui_styles.css";
 
 const confirmModelStyle = {
   position: "absolute",

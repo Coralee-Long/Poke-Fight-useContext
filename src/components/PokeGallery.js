@@ -3,6 +3,8 @@ import ImageList from "@mui/material/ImageList";
 import ImageListItem from "@mui/material/ImageListItem";
 import ImageListItemBar from "@mui/material/ImageListItemBar";
 import ListSubheader from "@mui/material/ListSubheader";
+import "../styles/battle.css";
+import "../styles/home.css";
 import "../styles/mui_styles.css";
 import BasicModel from "../Modals/BasicModel";
 import ConfirmModel from "../Modals/ConfirmModel";
