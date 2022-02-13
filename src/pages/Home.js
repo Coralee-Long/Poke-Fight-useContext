@@ -1,6 +1,8 @@
 import PokemonButton from "../components/PokemonButton";
 import PokeGallery from "../components/PokeGallery";
+import "../styles/battle.css";
 import "../styles/home.css";
+//import "../styles/mui_styles.css";
 import React, { useState, useEffect } from "react";
 import jwt_decode from 'jwt-decode';
 import Button from "@mui/material/Button";

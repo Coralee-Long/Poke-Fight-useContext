@@ -1,6 +1,9 @@
 import { useState, useEffect, useContext } from "react";
 import UserHealthBar from "./UserHealthBar";
 import { PokeContext } from "../../context/pokeContext";
+// import "./../styles/battle.css";
+// import "./../styles/home.css";
+// import "./../styles/mui_styles.css";
 
 const ComputerPoke = () => {
   const { pokemon, randomPoke, computerHealth } = useContext(PokeContext);

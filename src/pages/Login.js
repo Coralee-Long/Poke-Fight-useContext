@@ -4,6 +4,9 @@ import Button from "@mui/material/Button";
 import { login } from "../logic/UserFunctions"
 import TextField from '@mui/material/TextField';
 import { makeStyles } from '@material-ui/core';
+import "../styles/battle.css";
+import "../styles/home.css";
+import "../styles/mui_styles.css";
 
 //style for mui elements
 const useStyles = makeStyles(theme => ({

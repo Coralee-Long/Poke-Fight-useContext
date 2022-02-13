@@ -7,6 +7,9 @@ import LinearProgress, {
 } from "@mui/material/LinearProgress";
 import { useState, useContext } from "react";
 import { PokeContext } from "../../context/pokeContext";
+// import "../styles/battle.css";
+// import "../styles/home.css";
+// import "../styles/mui_styles.css";
 
 const UserHealthBar = ({ value }) => {
   //const [singlePoke, setSinglePoke] = useContext(PokeContext.singlePoke);

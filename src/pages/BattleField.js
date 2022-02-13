@@ -1,4 +1,6 @@
 import "../styles/battle.css";
+import "../styles/home.css";
+import "../styles/mui_styles.css";
 import ComputerPoke from "../components/battle/ComputerPoke";
 import UserPoke from "../components/battle/UserPoke";
 import { useEffect, useState, useContext } from "react";
@@ -40,6 +42,7 @@ const BattleField = () => {
   const [playGame, setPlayGame] = useState(false);
   const [disableButton, setDisableButton] = useState(false);
   const [detailsValue, setDetailsValue] = details;
+
 
   let navigate = useNavigate();
 

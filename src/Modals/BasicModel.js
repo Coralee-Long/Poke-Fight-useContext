@@ -5,6 +5,9 @@ import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import Modal from "@mui/material/Modal";
 import { PokeContext } from "../context/pokeContext";
+import "../styles/battle.css";
+import "../styles/home.css";
+import "../styles/mui_styles.css";
 
 const style = {
   position: "absolute",

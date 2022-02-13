@@ -1,6 +1,9 @@
 import React from "react";
 import Button from "@mui/material/Button";
 import { Link } from "react-router-dom";
+import "../styles/battle.css";
+import "../styles/home.css";
+import "../styles/mui_styles.css";
 
 const Landing = () => {
   return (
