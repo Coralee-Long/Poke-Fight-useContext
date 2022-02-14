@@ -152,7 +152,7 @@ const BattleField = () => {
           //set the attack value
           lblUserPoints.innerText = `${randomPokeValue.name.english} attacks with ${attackValue} points.
           ${singlePokeValue.name.english} defends with ${defendValue} points.
-          ${randomPokeValue.name.english} loses ${defenceDifference} healt points.`;
+          ${randomPokeValue.name.english} loses ${defenceDifference} health points.`;
         } else {
           setComputerHealthValue(0);
         }
